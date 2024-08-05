@@ -1,0 +1,72 @@
+pip install streamlit 
+with open('mesopsample.py', 'w') as f:
+    f.write("""
+import streamlit as st
+
+# Set page configuration
+st.set_page_config(page_title="BladeBridge", page_icon="🌐")
+
+# Custom CSS to style the header
+st.markdown(
+    \"""
+    <style>
+    .header {
+        background-color: #555555;
+        padding: 10px 0;
+        text-align: center;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    .header a {
+        margin: 0 15px;
+        color: #F5D47E;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    .header a:hover {
+        text-decoration: underline;
+    }
+    .header .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .header .button {
+        background-color: #F5D47E;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin-left: 15px;
+        border-radius: 25px;
+        color: white;
+        cursor: pointer;
+    }
+    .header .button:hover {
+        background-color: #f5b74e;
+    }
+    </style>
+    \""",
+    unsafe_allow_html=True
+)
+
+# Header HTML
+header_html = \"""
+<div class="header">
+    <span class="logo">BladeBridge</span>
+    <a href="#">HOME</a>
+    <a href="#">PRODUCTS</a>
+    <a href="#">CONTACT US</a>
+    <a href="#">PARTNER PORTAL</a>
+    <a class="button" href="#">REQUEST DEMO</a>
+</div>
+\"""
+
+
+# Display the header
+st.markdown(header_html, unsafe_allow_html=True)
+
+# Main content
+st.title("Analyzer")
+    """)
